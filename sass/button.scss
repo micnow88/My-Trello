@@ -1,0 +1,30 @@
+@import "variables.scss";
+
+.create-column,
+.add-card,
+.btn-delete {
+	margin: 10px;
+	font-family: $main-font;
+	color: $font-color;
+	font-size: 16px;
+	padding: 5px 10px;
+	border: 2px solid;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.create-column,
+.add-card {
+	background-color: $button-green;
+	border-color: $button-green;
+	&:hover {
+		background-color: white;
+	}
+}
+.btn-delete {
+	background-color: $button-red;
+	border-color: $button-red;
+	text-transform: uppercase;
+	&:hover {
+		background-color: white;
+	}
+}

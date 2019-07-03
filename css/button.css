@@ -1,0 +1,35 @@
+.create-column,
+.add-card,
+.btn-delete {
+  margin: 10px;
+  font-family: "Ubuntu", sans-serif;
+  color: #404240;
+  font-size: 16px;
+  padding: 5px 10px;
+  border: 2px solid;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.create-column,
+.add-card {
+  background-color: #21B702;
+  border-color: #21B702;
+}
+
+.create-column:hover,
+.add-card:hover {
+  background-color: white;
+}
+
+.btn-delete {
+  background-color: #DC0D02;
+  border-color: #DC0D02;
+  text-transform: uppercase;
+}
+
+.btn-delete:hover {
+  background-color: white;
+}
+
+/*# sourceMappingURL=button.css.map */

@@ -76,5 +76,50 @@ document.addEventListener('DOMContentLoaded', function() {
     	}
 	}
 
+	//Board object
+	var board = {
+    	name: 'Kanban Board',
+    	addColumn: function(column) {
+      		this.element.appendChild(column.element);
+      		initSortable(column.id);
+    	},
+    	element: document.querySelector('#board .column-container')
+	};
 
+	//Function initSortable
+	function initSortable(id) {
+  		var el = document.getElementById(id);
+  		if (el) {
+  			var sortable = '';
+  			sortable = Sortable.create(el, {
+    			group: 'kanban',
+    			sort: true
+  			});
+  		}
+	}
+
+	//Add Column function
+	document.querySelector('#board .create-column').addEventListener('click', function() {
+    	var name = prompt('Enter a column name');
+    	var column = new Column(name);
+    	board.addColumn(column);
+	});
+
+	// CREATING COLUMNS
+	var todoColumn = new Column('To do');
+	var doingColumn = new Column('Doing');
+	var doneColumn = new Column('Done');
+
+	// ADDING COLUMNS TO THE BOARD
+	board.addColumn(todoColumn);
+	board.addColumn(doingColumn);
+	board.addColumn(doneColumn);
+
+	// CREATING CARDS
+	var card1 = new Card('New task');
+	var card2 = new Card('Create kanban boards');
+
+	// ADDING CARDS TO COLUMNS
+	todoColumn.addCard(card1);
+	doingColumn.addCard(card2);
 });
